@@ -1,0 +1,49 @@
+name: Build and Deploy Themes
+
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Build theme files
+        working-directory: ./src
+        run: dotnet run Build.cs
+
+      - name: Deploy to VS Code theme repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.VSCODE_SSH_DEPLOY_KEY }}
+        with:
+          source-directory: "themes/vibrant-abyss-vscode.json"
+          destination-github-username: "noelhorvath"
+          destination-repository-name: "vibrant-abyss"
+          target-directory: "themes/"
+          user-email: "noelhorvath69@gmail.com"
+          user-name: "ThemeBot"
+          commit-message: "Update theme to ${{ github.ref_name }}"
+          target-branch: main
+
+      - name: Deploy to Zed theme repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.ZED_SSH_DEPLOY_KEY }}
+        with:
+          source-directory: "themes/vibrant-abyss-zed.json"
+          destination-github-username: "noelhorvath"
+          destination-repository-name: "vibrant-abyss-zed"
+          target-directory: "themes/"
+          user-email: "noelhorvath69@gmail.com"
+          user-name: "ThemeBot"
+          commit-message: "Update theme to ${{ github.ref_name }}"
+          target-branch: main
