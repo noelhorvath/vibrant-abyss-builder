@@ -1,0 +1,7 @@
+{
+  "EditorCodes": ["vscode", "zed"],
+  "OutputDirectory": "../themes",
+  "OutputFilePathFormat": "{0}/vibrant-abyss-{1}.json",
+  "PaletteFilePath": "palette.json",
+  "TemplateFilePathFormat": "templates/vibrant-abyss-{0}.template.json"
+}
