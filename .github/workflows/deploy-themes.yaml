@@ -20,6 +20,7 @@ jobs:
         working-directory: ./src
         run: |
           dotnet run Build.cs
+          mkdir -p themes
           cp -r themes/* ../themes/
 
       - name: Deploy to VS Code theme repository
