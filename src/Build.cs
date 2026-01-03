@@ -20,7 +20,7 @@ var paletteSpanLookup = paletteLookup.GetAlternateLookup<ReadOnlySpan<char>>();
 
 if (!Directory.Exists(settings.OutputDirectory))
     _ = Directory.CreateDirectory(settings.OutputDirectory);
-foreach (var editorCode in ThemeBuilder.EditorCodes)
+foreach (var editorCode in settings.EditorCodes)
 {
     var templateFilePath = string.Format(settings.TemplateFilePathFormat, editorCode);
     var templateContent = File.ReadAllText(templateFilePath);
@@ -55,7 +55,6 @@ foreach (var editorCode in ThemeBuilder.EditorCodes)
 internal static partial class ThemeBuilder
 {
     public const int TemplateDelimiterLength = 2;
-    public static string[] EditorCodes = { "vscode", "zed" };
 
     [GeneratedRegex(@"{{\w+}}")]
     public static partial Regex TemplateRegex();
