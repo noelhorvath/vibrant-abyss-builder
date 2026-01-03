@@ -23,7 +23,7 @@ jobs:
       - name: Deploy to VS Code theme repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          SSH_DEPLOY_KEY: ${{ secrets.VSCODE_SSH_DEPLOY_KEY }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: "themes/vibrant-abyss-vscode.json"
           destination-github-username: "noelhorvath"
@@ -37,7 +37,7 @@ jobs:
       - name: Deploy to Zed theme repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          SSH_DEPLOY_KEY: ${{ secrets.ZED_SSH_DEPLOY_KEY }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: "themes/vibrant-abyss-zed.json"
           destination-github-username: "noelhorvath"
