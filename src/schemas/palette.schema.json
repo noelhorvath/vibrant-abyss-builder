@@ -3,7 +3,7 @@
   "title": "Pitch Black Palette",
   "type": "object",
   "additionalProperties": false,
-  "minProperties": 71,
+  "minProperties": 80,
   "definitions": {
     "hexColor": {
       "$ref": "./definitions.schema.json#/definitions/hexColor"
@@ -91,6 +91,14 @@
     "ansi_bright_blue": { "$ref": "#/definitions/hexColor" },
     "ansi_bright_magenta": { "$ref": "#/definitions/hexColor" },
     "ansi_bright_cyan": { "$ref": "#/definitions/hexColor" },
-    "ansi_bright_white": { "$ref": "#/definitions/hexColor" }
+    "ansi_bright_white": { "$ref": "#/definitions/hexColor" },
+    "ansi_dim_black": { "$ref": "#/definitions/hexColor" },
+    "ansi_dim_red": { "$ref": "#/definitions/hexColor" },
+    "ansi_dim_green": { "$ref": "#/definitions/hexColor" },
+    "ansi_dim_yellow": { "$ref": "#/definitions/hexColor" },
+    "ansi_dim_blue": { "$ref": "#/definitions/hexColor" },
+    "ansi_dim_magenta": { "$ref": "#/definitions/hexColor" },
+    "ansi_dim_cyan": { "$ref": "#/definitions/hexColor" },
+    "ansi_dim_white": { "$ref": "#/definitions/hexColor" }
   }
 }
