@@ -18,32 +18,30 @@ jobs:
 
       - name: Build theme files
         working-directory: ./src
-        run: dotnet run Build.cs
+        run: |
+          dotnet run Build.cs
+          cp -r themes/* ../themes/
 
       - name: Deploy to VS Code theme repository
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: "themes/vibrant-abyss-vscode.json"
-          destination-github-username: "noelhorvath"
-          destination-repository-name: "vibrant-abyss"
-          target-directory: "themes/"
-          user-email: "noelhorvath69@gmail.com"
-          user-name: "ThemeBot"
-          commit-message: "Update theme to ${{ github.ref_name }}"
-          target-branch: main
+          source_file: "themes/vibrant-abyss-vscode.json"
+          destination_repo: noelhorvath/vibrant-abyss"
+          destination_folder: "themes"
+          user_email: "noelhorvath69@gmail.com"
+          user_name: "ThemeBot"
+          commit_message: "Update theme to ${{ github.ref_name }}"
 
       - name: Deploy to Zed theme repository
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: "themes/vibrant-abyss-zed.json"
-          destination-github-username: "noelhorvath"
-          destination-repository-name: "vibrant-abyss-zed"
-          target-directory: "themes/"
-          user-email: "noelhorvath69@gmail.com"
-          user-name: "ThemeBot"
-          commit-message: "Update theme to ${{ github.ref_name }}"
-          target-branch: main
+          source_file: "themes/vibrant-abyss-zed.json"
+          destination_repo: noelhorvath/vibrant-abyss-zed"
+          destination_folder: "themes"
+          user_email: "noelhorvath69@gmail.com"
+          user_name: "ThemeBot"
+          commit_message: "Update theme to ${{ github.ref_name }}"
