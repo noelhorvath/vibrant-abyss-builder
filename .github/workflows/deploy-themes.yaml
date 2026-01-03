@@ -18,10 +18,7 @@ jobs:
 
       - name: Build theme files
         working-directory: ./src
-        run: |
-          dotnet run Build.cs
-          mkdir -p themes
-          cp -r themes/* ../themes/
+        run: dotnet run Build.cs
 
       - name: Deploy to VS Code theme repository
         uses: dmnemec/copy_file_to_another_repo_action@main
