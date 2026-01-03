@@ -26,7 +26,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source_file: "themes/vibrant-abyss-vscode.json"
-          destination_repo: noelhorvath/vibrant-abyss"
+          destination_repo: "noelhorvath/vibrant-abyss"
           destination_folder: "themes"
           user_email: "noelhorvath69@gmail.com"
           user_name: "ThemeBot"
@@ -38,7 +38,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source_file: "themes/vibrant-abyss-zed.json"
-          destination_repo: noelhorvath/vibrant-abyss-zed"
+          destination_repo: "noelhorvath/vibrant-abyss-zed"
           destination_folder: "themes"
           user_email: "noelhorvath69@gmail.com"
           user_name: "ThemeBot"
