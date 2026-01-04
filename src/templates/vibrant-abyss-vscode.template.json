@@ -139,6 +139,7 @@
     "gitDecoration.stageModifiedResourceForeground": "{{git_modified}}",
     "gitDecoration.submoduleResourceForeground": "{{git_submodule}}",
     "gitDecoration.untrackedResourceForeground": "{{git_untracked}}",
+    "ports.iconRunningProcessForeground": "{{state_success}}",
     "terminal.background": "{{background_primary}}",
     "terminal.foreground": "{{foreground_primary}}",
     "terminal.selectionBackground": "{{background_selection}}",
