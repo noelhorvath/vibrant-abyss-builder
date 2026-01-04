@@ -185,7 +185,7 @@
         ],
         "syntax": {
           "attribute": {
-            "color": "{{syntax_attribute}}",
+            "color": "{{syntax_type}}",
             "font_style": null,
             "font_weight": null
           },
