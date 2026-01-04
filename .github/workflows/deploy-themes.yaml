@@ -50,3 +50,6 @@ jobs:
 
       - name: Create new release
         uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ github.ref_name }}
+          makeLatest: true
